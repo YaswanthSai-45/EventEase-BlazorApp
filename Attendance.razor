@@ -1,0 +1,15 @@
+@page "/attendance"
+
+<h3>Attendance Tracker</h3>
+@foreach (var evt in events)
+{
+    <EventCard Event="evt" />
+}
+
+@code {
+    private List<EventModel> events = new()
+    {
+        new() { Title = "Workshop", Location = "Hall A", Date = DateTime.Now },
+        new() { Title = "Tech Talk", Location = "Online", Date = DateTime.Now.AddDays(1) }
+    };
+}
